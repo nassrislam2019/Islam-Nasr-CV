@@ -39,7 +39,7 @@
     .hero::after{content:""; position:absolute; inset:-40% -20% auto auto; width:420px; height:420px; filter:blur(70px); opacity:.18; background:radial-gradient( circle at 30% 30%, var(--accent), transparent 60% ); pointer-events:none}
     .headline{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
     .avatar{ width:84px; height:84px; border-radius:24px; background:linear-gradient(135deg,#182230,#0d1016); border:1px solid var(--border); display:grid; place-items:center; overflow:hidden; }
-    .avatar svg{opacity:.8}
+    .avatar img{width:100%; height:100%; object-fit:cover; border-radius:24px;}
     .who h1{margin:0; font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:.2px}
     .who .role{margin-top:4px; font-size:clamp(14px,2vw,16px); color:var(--accent-2); font-weight:700}
     .hero .quick{margin-top:14px; color:var(--muted); font-size:14px}
@@ -80,11 +80,8 @@
   <div class="container">
     <section class="hero">
       <div class="headline">
-        <div class="avatar" aria-hidden="true">
-          <!-- Person icon -->
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 12c2.761 0 5-2.686 5-6s-2.239-5-5-5-5 2.239-5 5 2.239 6 5 6Zm0 2c-5.33 0-10 3.134-10 7v1h20v-1c0-3.866-4.67-7-10-7Z" fill="currentColor"/>
-          </svg>
+        <div class="avatar">
+          <img src="5.jpg" alt="Islam Nasr">
         </div>
         <div class="who">
           <h1>Islam Nasr</h1>
@@ -102,7 +99,7 @@
           <div class="list">
             <div class="item"><span class="icon">📍</span><span>Ain Shams, Cairo, Egypt</span></div>
             <div class="item"><span class="icon">✉️</span><a href="mailto:nassr.islam@outlook.com">nassr.islam@outlook.com</a></div>
-            <div class="item"><span class="icon">📱</span><a href="tel:+201000932232">+20 100 093 2232</a></div>
+            <div class="item"><span class="icon">📱</span><a href="tel:+201000932232">+20 100 093 2232</a></div>
           </div>
         </div>
 
@@ -137,7 +134,7 @@
             <span class="chip">Data Analysis & KPIs</span>
             <span class="chip">Team Leadership</span>
             <span class="chip">Coaching & Training</span>
-            <span class="chip">Problem‑Solving</span>
+            <span class="chip">Problem-Solving</span>
             <span class="chip">Microsoft Office</span>
             <span class="chip">Google Workspace</span>
           </div>
@@ -149,7 +146,7 @@
         <div class="section">
           <h2>About</h2>
           <p>
-            Designed and deployed a unified CRM framework that covers the full customer journey, standardizes lead statuses, powers dynamic dashboards, and automates reporting with marketing integration.
+            Designed and deployed a unified CRM framework covering the full customer journey, standardizing lead statuses, powering dynamic dashboards, and automating reporting with marketing integration.
           </p>
         </div>
 
@@ -161,7 +158,7 @@
               <div class="title">Senior CRM</div>
               <div class="place">AOG Developments</div>
               <ul class="bullets">
-                <li>Kickstarted unified lead‑tracking and standardized reporting.</li>
+                <li>Kickstarted unified lead-tracking and standardized reporting.</li>
               </ul>
             </div>
             <div class="entry">
@@ -214,7 +211,7 @@
             <ul class="bullets">
               <li>First Time Leadership – Go (Jan 2020)</li>
               <li>Workforce Management (WFM) – Go Solution (Jul 2021)</li>
-              <li>Advanced self‑learning in Excel, data analysis, and Google Sheets automation</li>
+              <li>Advanced self-learning in Excel, data analysis, and Google Sheets automation</li>
             </ul>
           </div>
         </div>
