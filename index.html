@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Islam Nasr — Senior CRM</title>
+  <meta name="description" content="السيرة الذاتية — إسلام نصر | Senior CRM" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #111318;
+      --muted: #8b95a7;
+      --text: #eef2f6;
+      --accent: #00d4ff;
+      --accent-2: #6ee7ff;
+      --chip: #151923;
+      --border: #1f2430;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#0a0c12,#0a0c12 30%,#0f1220);
+      color:var(--text); font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height:1.6;
+    }
+    .container{
+      max-width:1100px; margin:32px auto; padding:0 16px;
+    }
+    .shell{
+      display:grid; grid-template-columns: 320px 1fr; gap:24px; align-items:start;
+    }
+    @media (max-width: 900px){ .shell{grid-template-columns:1fr} }
+
+    /* Header Card */
+    .hero{
+      grid-column: 1 / -1; background:linear-gradient(135deg,#11131a,#141a26 60%, #0e2230);
+      border:1px solid var(--border); border-radius:24px; padding:28px; position:relative; overflow:hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .hero::after{content:""; position:absolute; inset:-40% -20% auto auto; width:420px; height:420px; filter:blur(70px); opacity:.18; background:radial-gradient( circle at 30% 30%, var(--accent), transparent 60% ); pointer-events:none}
+    .headline{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .avatar{
+      width:84px; height:84px; border-radius:24px; background:linear-gradient(135deg,#182230,#0d1016);
+      border:1px solid var(--border); display:grid; place-items:center; overflow:hidden;
+    }
+    .avatar svg{opacity:.8}
+    .who h1{margin:0; font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:.2px}
+    .who .role{margin-top:4px; font-size:clamp(14px,2vw,16px); color:var(--accent-2); font-weight:700}
+    .hero .quick{margin-top:14px; color:var(--muted); font-size:14px}
+
+    /* Sidebar */
+    .card{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:20px}
+    .card h3{margin:0 0 12px 0; font-size:15px; letter-spacing:.3px; font-weight:800; color:#d7dee9}
+    .list{display:grid; gap:10px}
+    .item{display:flex; align-items:center; gap:10px}
+    .icon{width:28px; height:28px; border-radius:10px; display:grid; place-items:center; background:var(--chip); border:1px solid var(--border)}
+    .muted{color:var(--muted)}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:999px; font-size:12px}
+
+    /* Main */
+    .section{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:22px}
+    .section h2{margin:0 0 12px 0; font-size:18px}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    @media (max-width: 900px){ .grid-2{grid-template-columns:1fr} }
+
+    /* Timeline */
+    .timeline{position:relative; display:grid; gap:16px}
+    .entry{display:grid; gap:4px; padding-left:14px; border-right:none; position:relative}
+    .entry::before{content:""; position:absolute; right:100%; top:9px; width:8px; height:8px; border-radius:50%; background:var(--accent)}
+    .entry .when{font-size:12px; color:var(--muted)}
+    .entry .title{font-weight:800}
+    .entry .place{font-size:13px; color:#cfe8ff}
+    .bullets{margin:8px 0 0 0; padding:0 18px; color:#cbd3e1}
+
+    /* Footer */
+    .foot{grid-column:1/-1; text-align:center; color:var(--muted); font-size:13px; margin-top:8px}
+    .sep{height:1px; background:var(--border); margin:8px 0 16px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="headline">
+        <div class="avatar" aria-hidden="true">
+          <!-- Person icon -->
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 12c2.761 0 5-2.686 5-6s-2.239-5-5-5-5 2.239-5 5 2.239 6 5 6Zm0 2c-5.33 0-10 3.134-10 7v1h20v-1c0-3.866-4.67-7-10-7Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div class="who">
+          <h1>Islam Nasr</h1>
+          <div class="role">Senior CRM</div>
+          <p class="quick muted">CRM & Customer Service professional بخبرة 9+ سنوات في العقارات والسيارات والبنوك. تطوير CRM، تتبّع المبيعات، وقيادة الفرق.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell" role="main">
+      <!-- Sidebar -->
+      <aside class="stack" aria-label="Sidebar" style="display:grid; gap:18px">
+        <div class="card">
+          <h3>التواصل</h3>
+          <div class="list">
+            <div class="item"><span class="icon">📍</span><span>Ain Shams, Cairo, Egypt</span></div>
+            <div class="item"><span class="icon">✉️</span><a href="mailto:nassr.islam@outlook.com">nassr.islam@outlook.com</a></div>
+            <div class="item"><span class="icon">📱</span><a href="tel:+201000932232">+20 100 093 2232</a></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>التعليم</h3>
+          <div class="list">
+            <div class="item">
+              <div class="icon">🎓</div>
+              <div>
+                <div><strong>Information Systems Management</strong></div>
+                <div class="muted">Future Academy — 2013 (Grade: Good)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>اللغات</h3>
+          <div class="chips">
+            <span class="chip">العربية: Native</span>
+            <span class="chip">English: B1–B2</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>المهارات</h3>
+          <div class="chips">
+            <span class="chip">CRM Development</span>
+            <span class="chip">Customer Journey Mapping</span>
+            <span class="chip">Sales Funnel Tracking</span>
+            <span class="chip">Customer Experience</span>
+            <span class="chip">Data Analysis & KPIs</span>
+            <span class="chip">Team Leadership</span>
+            <span class="chip">Coaching & Training</span>
+            <span class="chip">Problem‑Solving</span>
+            <span class="chip">Microsoft Office</span>
+            <span class="chip">Google Workspace</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content -->
+      <section class="stack" style="display:grid; gap:18px">
+        <div class="section">
+          <h2>نبذة</h2>
+          <p>
+            صمّمت ونفّذت إطار CRM موحّد يغطي رحلة العميل بالكامل، مع توحيد حالات الـ Lead وبناء لوحات تحكم ديناميكية وأتمتة للتقارير ودمج التسويق.
+          </p>
+        </div>
+
+        <div class="section">
+          <h2>الخبرات</h2>
+          <div class="timeline">
+            <div class="entry">
+              <div class="when">أغسطس 2025 – حتى الآن</div>
+              <div class="title">Senior CRM</div>
+              <div class="place">AOG Developments</div>
+              <ul class="bullets">
+                <li>بدء بناء نظام تتبّع Leads وتقارير معيارية.</li>
+              </ul>
+            </div>
+            <div class="entry">
+              <div class="when">سبتمبر 2023 – أغسطس 2025</div>
+              <div class="title">Customer Care Supervisor</div>
+              <div class="place">ellaithy Auto Group</div>
+              <ul class="bullets">
+                <li>تحسين دقة التقارير ورفع كفاءة التشغيل.</li>
+                <li>رفع رضا العملاء وأتمتة أجزاء من سير العمل.</li>
+              </ul>
+            </div>
+            <div class="entry">
+              <div class="when">أغسطس 2022 – أكتوبر 2023</div>
+              <div class="title">Call Center Team Leader</div>
+              <div class="place">Banque Misr</div>
+              <ul class="bullets">
+                <li>إدارة فريق الردود والالتزام بالـ SLA/KPI.</li>
+              </ul>
+            </div>
+            <div class="entry">
+              <div class="when">يوليو 2019 – سبتمبر 2022</div>
+              <div class="title">Call Center Team Leader</div>
+              <div class="place">National Bank of Egypt</div>
+            </div>
+            <div class="entry">
+              <div class="when">يونيو 2016 – يونيو 2019</div>
+              <div class="title">Call Center Agent</div>
+              <div class="place">National Bank of Egypt</div>
+            </div>
+            <div class="entry">
+              <div class="when">ديسمبر 2015 – يونيو 2016</div>
+              <div class="title">Call Center Agent</div>
+              <div class="place">Vodafone 888</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="section">
+            <h2>الإنجازات الرئيسية</h2>
+            <ul class="bullets">
+              <li>إطلاق تطوير CRM في AOG مع إطار موحّد للتتبّع والتقارير.</li>
+              <li>تحقيق KPIs في ellaithy عبر تحسين التقارير والكفاءة.</li>
+              <li>رفع جودة خدمة العملاء وتسريع الحلول.</li>
+              <li>قيادة وتدريب الفرق ورفع الأداء العام.</li>
+            </ul>
+          </div>
+          <div class="section">
+            <h2>الدورات والتدريب</h2>
+            <ul class="bullets">
+              <li>First Time Leadership – Go (يناير 2020)</li>
+              <li>Workforce Management (WFM) – Go Solution (يوليو 2021)</li>
+              <li>تعلم متقدم ذاتي في Excel وتحليل البيانات وأتمتة Google Sheets</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="foot">
+      <div class="sep"></div>
+      © <span id="y"></span> Islam Nasr — جميع الحقوق محفوظة
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
