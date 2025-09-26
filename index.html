@@ -3,311 +3,242 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Islam Nasr — Senior CRM</title>
-  <meta name="description" content="Resume — Islam Nasr | Senior CRM" />
-  <meta name="color-scheme" content="dark" />
+  <title>Islam Nasr • Senior CRM</title>
+
+  <!-- Google Font (اختياري) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#1a1d29;              /* خلفية عامة لون واحد */
-      --card:#111318;
-      --muted:#8b95a7;
-      --text:#eef2f6;
-      --accent:#00aaff;          /* Light Blue */
-      --accent-2:#00aaff;
-      --chip:#151923;
-      --border:#1f2430;
+      --bg:#0d1117;
+      --bg-soft:#111622;
+      --card:#0f1624;
+      --text:#e6edf3;
+      --muted:#a9b3c1;
+      --accent:#2fb1ff;
+      --ring:#263244;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 22px;
     }
+
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      background:var(--bg);      /* لون واحد بدون تدرج */
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Segoe UI Emoji";
       color:var(--text);
-      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      line-height:1.6;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, #1b2233 0%, transparent 60%),
+        radial-gradient(900px 500px at 110% 10%, #131c2b 0%, transparent 60%),
+        var(--bg);
     }
 
-    .container{max-width:1100px;margin:32px auto;padding:0 16px}
-    .shell{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start}
-    @media (max-width:900px){.shell{grid-template-columns:1fr}}
-
-    /* Header Card */
-    .hero{
-      grid-column:1 / -1;
-      background:linear-gradient(135deg,#11131a,#141a26 60%, #0e2230);
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:28px;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:-40% -20% auto auto;
-      width:420px;height:420px;
-      filter:blur(70px);
-      opacity:.18;
-      background:radial-gradient(circle at 30% 30%, var(--accent), transparent 60%);
-      pointer-events:none;
+    .wrap{
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 24px;
     }
 
-    /* Headline: الصورة يسار والنص يمين وبنفس الارتفاع */
-    .headline{
+    .card{
+      background: linear-gradient(180deg, var(--card), var(--bg-soft) 140%);
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(16px, 2.2vw, 28px);
+    }
+
+    /* ====== Header (photo + summary) ====== */
+    .header{
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: clamp(16px, 2.2vw, 28px);
+      align-items: center;
+    }
+
+    /* صورة البروفايل */
+    .photo{
+      position: relative;
+      border-radius: calc(var(--radius) - 6px);
+      overflow: hidden;
+      border: 1px solid var(--ring);
+      box-shadow: 0 6px 20px rgba(0,0,0,.35) inset;
+      background: #0b0f18;
+      /* يضمن أن نهاية الصورة تقارب نهاية النص في الديسكتوب */
+      height: 100%;
+      min-height: 300px;
+    }
+    .photo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .title{
+      line-height: 1.15;
+      margin: 0 0 6px 0;
+      font-weight: 800;
+      font-size: clamp(26px, 3.2vw, 40px);
+      letter-spacing: .2px;
+    }
+    .subtitle{
+      margin: 0 0 14px 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: clamp(16px, 1.7vw, 20px);
+    }
+    .summary{
+      color: var(--text);
+      font-size: clamp(14px, 1.4vw, 18px);
+      line-height: 1.75;
+      opacity: .95;
+    }
+
+    /* Badges / quick info */
+    .badges{
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .badge{
+      padding: 8px 12px;
+      border: 1px solid var(--ring);
+      background: #0f1a2a;
+      color: var(--muted);
+      font-size: 13px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* ===== Sections ===== */
+    .section{
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px dashed #1f2a3f;
+    }
+    .section h3{
+      margin: 0 0 12px 0;
+      font-size: clamp(18px, 2vw, 24px);
+    }
+    .list{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 10px 18px;
+    }
+    .list li{
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ===== Footer links ===== */
+    .links{
+      margin-top: 18px;
       display:flex;
-      gap:24px;
-      align-items:stretch;
-      flex-wrap:nowrap;
+      gap: 12px;
+      flex-wrap: wrap;
     }
-    .who{flex:1; min-width:0}
-
-    /* Avatar */
-    .avatar{
-      width:180px;
-      border-radius:24px;
-      background:linear-gradient(135deg,#182230,#0d1016);
-      border:1px solid var(--border);
-      display:flex;
-      overflow:hidden;
-      box-shadow:0 8px 24px rgba(0,0,0,.35);
-      flex-shrink:0;
+    .btn{
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--ring);
+      background: #0f1a2a;
+      color: var(--text);
+      font-weight: 600;
+      transition: transform .08s ease, background .2s ease;
     }
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:24px;
-    }
+    .btn:hover{ transform: translateY(-1px); background:#132137 }
 
-    .who h1{margin:0;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:.2px}
-    .who .role{margin-top:4px;font-size:clamp(16px,2.2vw,18px);color:var(--accent-2) !important;font-weight:800}
-
-    /* Summary */
-    .hero .quick{
-      margin-top:14px;
-      color:#ffffff;      /* أبيض */
-      font-size:16px;     /* أكبر قليلاً */
-      line-height:1.8;
+    /* ====== Mobile tweaks ====== */
+    @media (max-width: 900px){
+      .header{
+        grid-template-columns: 1fr;
+      }
+      .photo{
+        max-width: 420px;
+        margin: 0 auto;
+        min-height: 260px;
+      }
+      .list{
+        grid-template-columns: 1fr;
+      }
+      .summary{ text-align: left; }
     }
 
-    /* Cards */
-    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px}
-    .card h3{margin:0 0 12px 0;font-size:15px;letter-spacing:.3px;font-weight:800;color:#d7dee9}
-    .list{display:grid;gap:10px}
-    .item{display:flex;align-items:center;gap:10px}
-    .icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:var(--chip);border:1px solid var(--border)}
-    .muted{color:var(--muted)}
-
-    /* Links & accent text */
-    a{color:var(--accent) !important;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .entry .place{color:var(--accent) !important}
-
-    /* === Skills: قائمة نقط بدل مربعات === */
-    .skills-list{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-      padding-left:20px;      /* مسافة للنقط */
-      margin:0;
-    }
-    .skills-list li{
-      list-style:disc;        /* نقط */
-      color:#ffffff;
-      font-size:14px;
-      padding-left:2px;
-    }
-
-    /* Main sections */
-    .section{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px}
-    .section h2{margin:0 0 12px 0;font-size:18px}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
-
-    /* Timeline */
-    .timeline{position:relative;display:grid;gap:16px}
-    .entry{display:grid;gap:4px;padding-left:14px;position:relative}
-    .entry::before{content:"";position:absolute;left:-14px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
-    .entry .when{font-size:12px;color:var(--muted)}
-    .entry .title{font-weight:800}
-    .bullets{margin:8px 0 0 0;padding:0 18px;color:#cbd3e1}
-
-    /* Footer + Separator (2mm) */
-    .foot{grid-column:1/-1;text-align:center;color:var(--muted);font-size:13px;margin-top:8px}
-    .sep{height:2mm;background:var(--border);margin:8px 0 16px} /* سمك 2 ملم */
-    .counter{margin-top:6px;font-size:14px;color:#ffffff}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .headline{flex-wrap:wrap;align-items:flex-start}
-      .avatar{width:170px}
-      .avatar img{height:auto}
+    /* تصغير الهوامش على الشاشات الصغيرة جداً */
+    @media (max-width: 420px){
+      .wrap{ padding: 14px }
+      .badge{ font-size: 12px }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <section class="hero">
-      <div class="headline">
-        <div class="avatar">
-          <img src="5.jpg" alt="Portrait of Islam Nasr" loading="eager">
-        </div>
-        <div class="who">
-          <h1>Islam Nasr</h1>
-          <div class="role">Senior CRM</div>
-          <p class="quick">
+  <main class="wrap">
+    <section class="card">
+
+      <!-- Header -->
+      <div class="header">
+        <figure class="photo">
+          <!-- غيّر src لو صورتك باسم مختلف -->
+          <img src="5.jpg" alt="Islam Nasr Profile Photo">
+        </figure>
+
+        <div class="about">
+          <h1 class="title">Islam Nasr</h1>
+          <h2 class="subtitle">Senior CRM</h2>
+
+          <p class="summary">
             CRM & Customer Service professional with 9+ years of experience in real estate, automotive, and banking.
-            Skilled in customer service operations, sales tracking, and team leadership. Currently initiating CRM
-            development at AOG, with a proven record in achieving KPIs and enhancing customer service processes.
-            Designed and deployed a unified CRM framework covering the full customer journey, standardizing lead statuses,
-            powering dynamic dashboards, and automating reporting with marketing integration.
+            Skilled in customer service operations, sales tracking, and team leadership. Currently initiating CRM development
+            and standardization at AOG with a structured lead-tracking and reporting framework to improve performance,
+            visibility, and decision-making.
           </p>
+
+          <div class="badges">
+            <span class="badge">CRM Development</span>
+            <span class="badge">Customer Experience</span>
+            <span class="badge">Sales Funnel Tracking</span>
+            <span class="badge">KPI Reporting</span>
+            <span class="badge">Leadership</span>
+          </div>
+
+          <div class="links">
+            <a class="btn" href="mailto:islam@example.com">Email</a>
+            <a class="btn" href="https://www.linkedin.com/in/islam-nasr-7476041b8" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn" href="#skills">Skills</a>
+          </div>
         </div>
       </div>
+
+      <!-- Skills -->
+      <div id="skills" class="section">
+        <h3>Core Skills</h3>
+        <ul class="list">
+          <li>Customer Journey Mapping &amp; Sales Funnel Tracking</li>
+          <li>Customer Experience Enhancement</li>
+          <li>CRM Development &amp; Standardization</li>
+          <li>Data Analysis &amp; KPI Reporting</li>
+          <li>Microsoft Office &amp; Google Workspace</li>
+          <li>Team Leadership &amp; Coaching</li>
+        </ul>
+      </div>
+
+      <!-- Achievements -->
+      <div class="section">
+        <h3>Key Achievements</h3>
+        <ul class="list">
+          <li>Launched structured CRM reporting at AOG; improved pipeline visibility and SLA adherence.</li>
+          <li>Achieved KPIs at ellaithy Auto Group by enhancing reporting accuracy and operational efficiency.</li>
+          <li>Improved customer service processes, reducing resolution time and raising CSAT.</li>
+          <li>Trained and coached teams, boosting performance and engagement.</li>
+        </ul>
+      </div>
+
     </section>
-
-    <div class="shell" role="main">
-      <!-- Sidebar -->
-      <aside class="stack" aria-label="Sidebar" style="display:grid;gap:18px">
-        <div class="card">
-          <h3>Contact</h3>
-          <div class="list">
-            <div class="item"><span class="icon">📍</span><span>Ain Shams, Cairo, Egypt</span></div>
-            <div class="item"><span class="icon">✉️</span><a href="mailto:nassr.islam@outlook.com">nassr.islam@outlook.com</a></div>
-            <div class="item"><span class="icon">📱</span><a href="tel:+201000932232">+20 100 093 2232</a></div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Education</h3>
-          <div class="list">
-            <div class="item">
-              <div class="icon">🎓</div>
-              <div>
-                <div><strong>Information Systems Management</strong></div>
-                <div class="muted">Future Academy — 2013 (Grade: Good)</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Languages</h3>
-          <div class="chips">
-            <span class="chip">Arabic (Native)</span>
-            <span class="chip">English (B1–B2)</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Skills</h3>
-          <!-- نقاط بدل مربعات -->
-          <ul class="skills-list">
-            <li>CRM Development</li>
-            <li>Customer Journey Mapping</li>
-            <li>Sales Funnel Tracking</li>
-            <li>Customer Experience</li>
-            <li>Data Analysis & KPIs</li>
-            <li>Team Leadership</li>
-            <li>Coaching & Training</li>
-            <li>Problem-Solving</li>
-            <li>Microsoft Office</li>
-            <li>Google Workspace</li>
-          </ul>
-        </div>
-      </aside>
-
-      <!-- Main content -->
-      <section class="stack" style="display:grid;gap:18px">
-        <div class="section">
-          <h2>Experience</h2>
-          <div class="timeline">
-            <div class="entry">
-              <div class="when">Aug 2025 – Present</div>
-              <div class="title">Senior CRM</div>
-              <div class="place">AOG Developments</div>
-              <ul class="bullets">
-                <li>Kickstarted unified lead-tracking and standardized reporting.</li>
-              </ul>
-            </div>
-            <div class="entry">
-              <div class="when">Sep 2023 – Aug 2025</div>
-              <div class="title">Customer Care Supervisor</div>
-              <div class="place">ellaithy Auto Group</div>
-              <ul class="bullets">
-                <li>Improved reporting accuracy and operational efficiency.</li>
-                <li>Increased customer satisfaction and automated workflow steps.</li>
-              </ul>
-            </div>
-            <div class="entry">
-              <div class="when">Aug 2022 – Oct 2023</div>
-              <div class="title">Call Center Team Leader</div>
-              <div class="place">Banque Misr</div>
-              <ul class="bullets">
-                <li>Managed responses team and ensured SLA/KPI compliance.</li>
-              </ul>
-            </div>
-            <div class="entry">
-              <div class="when">Jul 2019 – Sep 2022</div>
-              <div class="title">Call Center Team Leader</div>
-              <div class="place">National Bank of Egypt</div>
-            </div>
-            <div class="entry">
-              <div class="when">Jun 2016 – Jun 2019</div>
-              <div class="title">Call Center Agent</div>
-              <div class="place">National Bank of Egypt</div>
-            </div>
-            <div class="entry">
-              <div class="when">Dec 2015 – Jun 2016</div>
-              <div class="title">Call Center Agent</div>
-              <div class="place">Vodafone 888</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-2">
-          <div class="section">
-            <h2>Key Achievements</h2>
-            <ul class="bullets">
-              <li>Launched CRM development at AOG with a unified tracking & reporting framework.</li>
-              <li>Met KPIs at ellaithy by enhancing reports and efficiency.</li>
-              <li>Improved customer service quality and reduced resolution time.</li>
-              <li>Led and coached teams to elevate performance.</li>
-            </ul>
-          </div>
-          <div class="section">
-            <h2>Courses & Training</h2>
-            <ul class="bullets">
-              <li>First Time Leadership – Go (Jan 2020)</li>
-              <li>Workforce Management (WFM) – Go Solution (Jul 2021)</li>
-              <li>Advanced self-learning in Excel, data analysis, and Google Sheets automation</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="foot">
-      <div class="sep"></div>  <!-- سمك 2 مم -->
-      <p class="counter">Visitors Count: <span id="visitor-count">0</span></p>
-      © <span id="y"></span> Islam Nasr — All rights reserved
-    </div>
-  </div>
-
-  <script>
-    // سنة ديناميكية
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // عداد زوار عالمي (CountAPI)
-    fetch('https://api.countapi.xyz/hit/islamnasr-cv/visits')
-      .then(res => res.json())
-      .then(res => {
-        document.getElementById('visitor-count').textContent = res.value;
-      });
-  </script>
+  </main>
 </body>
 </html>
