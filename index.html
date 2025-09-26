@@ -5,95 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Islam Nasr — Senior CRM</title>
   <meta name="description" content="Resume — Islam Nasr | Senior CRM" />
+  <meta name="color-scheme" content="dark" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b0c10;
-      --card: #111318;
-      --muted: #8b95a7;
-      --text: #eef2f6;
-      --accent: #00bfff;   /* Sky Blue */
-      --accent-2: #00bfff; /* Sky Blue */
-      --chip: #151923;
-      --border: #1f2430;
+    :root{
+      --bg:#0b0c10;
+      --card:#111318;
+      --muted:#8b95a7;
+      --text:#eef2f6;
+      --accent:#00bfff;   /* Sky Blue */
+      --accent-2:#00bfff; /* Sky Blue */
+      --chip:#151923;
+      --border:#1f2430;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; background:linear-gradient(180deg,#0a0c12,#0a0c12 30%,#0f1220);
-      color:var(--text); font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      margin:0;
+      background:linear-gradient(180deg,#0a0c12,#0a0c12 30%,#0f1220);
+      color:var(--text);
+      font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.6;
     }
-    .container{ max-width:1100px; margin:32px auto; padding:0 16px; }
-    .shell{ display:grid; grid-template-columns: 320px 1fr; gap:24px; align-items:start; }
-    @media (max-width: 900px){ .shell{grid-template-columns:1fr} }
+    .container{max-width:1100px;margin:32px auto;padding:0 16px}
+    .shell{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start}
+    @media (max-width:900px){.shell{grid-template-columns:1fr}}
 
     /* Header Card */
     .hero{
-      grid-column: 1 / -1; background:linear-gradient(135deg,#11131a,#141a26 60%, #0e2230);
-      border:1px solid var(--border); border-radius:24px; padding:28px; position:relative; overflow:hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+      grid-column:1 / -1;
+      background:linear-gradient(135deg,#11131a,#141a26 60%,#0e2230);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
     }
     .hero::after{
-      content:""; position:absolute; inset:-40% -20% auto auto; width:420px; height:420px;
-      filter:blur(70px); opacity:.18;
+      content:"";
+      position:absolute;
+      inset:-40% -20% auto auto;
+      width:420px;height:420px;
+      filter:blur(70px);
+      opacity:.18;
       background:radial-gradient(circle at 30% 30%, var(--accent), transparent 60%);
-      pointer-events:none
+      pointer-events:none;
     }
-    .headline{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
+    .headline{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 
-    /* Avatar (doubled size) */
+    /* Avatar (bigger) */
     .avatar{
-      width:200px; height:200px;
-      border-radius:24px; background:linear-gradient(135deg,#182230,#0d1016);
-      border:1px solid var(--border); display:grid; place-items:center; overflow:hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      width:200px;height:200px;
+      border-radius:24px;
+      background:linear-gradient(135deg,#182230,#0d1016);
+      border:1px solid var(--border);
+      display:grid;place-items:center;
+      overflow:hidden;
+      box-shadow:0 8px 24px rgba(0,0,0,.35);
     }
-    .avatar img{width:100%; height:100%; object-fit:cover; border-radius:24px;}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:24px}
 
-    .who h1{margin:0; font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:.2px}
-    .who .role{margin-top:4px; font-size:clamp(16px,2.2vw,18px); color:var(--accent-2) !important; font-weight:800}
-    .hero .quick{margin-top:14px; color:var(--muted); font-size:14px}
+    .who h1{margin:0;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:.2px}
+    .who .role{margin-top:4px;font-size:clamp(16px,2.2vw,18px);color:var(--accent-2) !important;font-weight:800}
+    .hero .quick{margin-top:14px;color:var(--muted);font-size:14px}
 
     /* Cards */
-    .card{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:20px}
-    .card h3{margin:0 0 12px 0; font-size:15px; letter-spacing:.3px; font-weight:800; color:#d7dee9}
-    .list{display:grid; gap:10px}
-    .item{display:flex; align-items:center; gap:10px}
-    .icon{width:28px; height:28px; border-radius:10px; display:grid; place-items:center; background:var(--chip); border:1px solid var(--border)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:20px}
+    .card h3{margin:0 0 12px 0;font-size:15px;letter-spacing:.3px;font-weight:800;color:#d7dee9}
+    .list{display:grid;gap:10px}
+    .item{display:flex;align-items:center;gap:10px}
+    .icon{width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:var(--chip);border:1px solid var(--border)}
     .muted{color:var(--muted)}
 
     /* Links & accent text */
-    a{color:var(--accent) !important; text-decoration:none}
+    a{color:var(--accent) !important;text-decoration:none}
     a:hover{text-decoration:underline}
     .entry .place{color:var(--accent) !important}
 
     /* Chips */
-    .chips{display:flex; flex-wrap:wrap; gap:8px;}
-    .chip{background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:12px; font-size:13px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--chip);border:1px solid var(--border);padding:6px 10px;border-radius:12px;font-size:13px}
 
     /* Skills vertical list */
-    .skills-list{display:flex; flex-direction:column; gap:8px;}
+    .skills-list{display:flex;flex-direction:column;gap:8px}
 
     /* Main */
-    .section{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:22px}
-    .section h2{margin:0 0 12px 0; font-size:18px}
-    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    @media (max-width: 900px){ .grid-2{grid-template-columns:1fr} }
+    .section{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px}
+    .section h2{margin:0 0 12px 0;font-size:18px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:900px){.grid-2{grid-template-columns:1fr}}
 
     /* Timeline */
-    .timeline{position:relative; display:grid; gap:16px}
-    .entry{display:grid; gap:4px; padding-left:14px; position:relative}
-    .entry::before{content:""; position:absolute; left:-14px; top:9px; width:8px; height:8px; border-radius:50%; background:var(--accent)}
-    .entry .when{font-size:12px; color:var(--muted)}
+    .timeline{position:relative;display:grid;gap:16px}
+    .entry{display:grid;gap:4px;padding-left:14px;position:relative}
+    .entry::before{content:"";position:absolute;left:-14px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--accent)}
+    .entry .when{font-size:12px;color:var(--muted)}
     .entry .title{font-weight:800}
-    .bullets{margin:8px 0 0 0; padding:0 18px; color:#cbd3e1}
+    .bullets{margin:8px 0 0 0;padding:0 18px;color:#cbd3e1}
 
     /* Footer */
-    .foot{grid-column:1/-1; text-align:center; color:var(--muted); font-size:13px; margin-top:8px}
-    .sep{height:1px; background:var(--border); margin:8px 0 16px}
+    .foot{grid-column:1/-1;text-align:center;color:var(--muted);font-size:13px;margin-top:8px}
+    .sep{height:1px;background:var(--border);margin:8px 0 16px}
   </style>
 </head>
 <body>
@@ -101,16 +116,15 @@
     <section class="hero">
       <div class="headline">
         <div class="avatar">
-          <img src="5.jpg" alt="Islam Nasr">
+          <img src="5.jpg" alt="Portrait of Islam Nasr" loading="eager">
         </div>
         <div class="who">
           <h1>Islam Nasr</h1>
           <div class="role">Senior CRM</div>
           <p class="quick muted">
             CRM & Customer Service professional with 9+ years of experience in real estate, automotive, and banking.
-            Skilled in customer service operations, sales tracking, and team leadership.
-            Currently initiating CRM development at AOG, with a proven record in achieving KPIs and enhancing customer
- service processes.
+            Skilled in customer service operations, sales tracking, and team leadership. Currently initiating CRM
+            development at AOG, with a proven record in achieving KPIs and enhancing customer service processes.
           </p>
         </div>
       </div>
@@ -118,7 +132,7 @@
 
     <div class="shell" role="main">
       <!-- Sidebar -->
-      <aside class="stack" aria-label="Sidebar" style="display:grid; gap:18px">
+      <aside class="stack" aria-label="Sidebar" style="display:grid;gap:18px">
         <div class="card">
           <h3>Contact</h3>
           <div class="list">
@@ -167,7 +181,7 @@
       </aside>
 
       <!-- Main content -->
-      <section class="stack" style="display:grid; gap:18px">
+      <section class="stack" style="display:grid;gap:18px">
         <div class="section">
           <h2>About</h2>
           <p>
