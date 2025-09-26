@@ -53,12 +53,17 @@
     .muted{color:var(--muted)}
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
-    .chips{
+
+    /* Chips */
+    .chips{display:flex; flex-wrap:wrap; gap:8px;}
+    .chip{background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:12px; font-size:13px}
+
+    /* Skills vertical list */
+    .skills-list{
       display:flex;
-      flex-direction:column; /* يخلي العناصر تحت بعض */
+      flex-direction:column;
       gap:8px;
     }
-    .chip{background:var(--chip); border:1px solid var(--border); padding:6px 10px; border-radius:12px; font-size:13px}
 
     /* Main */
     .section{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:22px}
@@ -130,7 +135,7 @@
 
         <div class="card">
           <h3>Skills</h3>
-          <div class="chips">
+          <div class="skills-list">
             <span class="chip">CRM Development</span>
             <span class="chip">Customer Journey Mapping</span>
             <span class="chip">Sales Funnel Tracking</span>
