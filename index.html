@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Islam Nasr — Senior CRM</title>
-  <meta name="description" content="السيرة الذاتية — إسلام نصر | Senior CRM" />
+  <meta name="description" content="Resume — Islam Nasr | Senior CRM" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0b0c10;
@@ -23,15 +23,11 @@
     html,body{height:100%}
     body{
       margin:0; background:linear-gradient(180deg,#0a0c12,#0a0c12 30%,#0f1220);
-      color:var(--text); font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text); font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       line-height:1.6;
     }
-    .container{
-      max-width:1100px; margin:32px auto; padding:0 16px;
-    }
-    .shell{
-      display:grid; grid-template-columns: 320px 1fr; gap:24px; align-items:start;
-    }
+    .container{ max-width:1100px; margin:32px auto; padding:0 16px; }
+    .shell{ display:grid; grid-template-columns: 320px 1fr; gap:24px; align-items:start; }
     @media (max-width: 900px){ .shell{grid-template-columns:1fr} }
 
     /* Header Card */
@@ -42,16 +38,13 @@
     }
     .hero::after{content:""; position:absolute; inset:-40% -20% auto auto; width:420px; height:420px; filter:blur(70px); opacity:.18; background:radial-gradient( circle at 30% 30%, var(--accent), transparent 60% ); pointer-events:none}
     .headline{display:flex; gap:18px; align-items:center; flex-wrap:wrap}
-    .avatar{
-      width:84px; height:84px; border-radius:24px; background:linear-gradient(135deg,#182230,#0d1016);
-      border:1px solid var(--border); display:grid; place-items:center; overflow:hidden;
-    }
+    .avatar{ width:84px; height:84px; border-radius:24px; background:linear-gradient(135deg,#182230,#0d1016); border:1px solid var(--border); display:grid; place-items:center; overflow:hidden; }
     .avatar svg{opacity:.8}
     .who h1{margin:0; font-size:clamp(22px,3vw,32px); font-weight:800; letter-spacing:.2px}
     .who .role{margin-top:4px; font-size:clamp(14px,2vw,16px); color:var(--accent-2); font-weight:700}
     .hero .quick{margin-top:14px; color:var(--muted); font-size:14px}
 
-    /* Sidebar */
+    /* Cards */
     .card{background:var(--card); border:1px solid var(--border); border-radius:20px; padding:20px}
     .card h3{margin:0 0 12px 0; font-size:15px; letter-spacing:.3px; font-weight:800; color:#d7dee9}
     .list{display:grid; gap:10px}
@@ -71,8 +64,8 @@
 
     /* Timeline */
     .timeline{position:relative; display:grid; gap:16px}
-    .entry{display:grid; gap:4px; padding-left:14px; border-right:none; position:relative}
-    .entry::before{content:""; position:absolute; right:100%; top:9px; width:8px; height:8px; border-radius:50%; background:var(--accent)}
+    .entry{display:grid; gap:4px; padding-left:14px; position:relative}
+    .entry::before{content:""; position:absolute; left:-14px; top:9px; width:8px; height:8px; border-radius:50%; background:var(--accent)}
     .entry .when{font-size:12px; color:var(--muted)}
     .entry .title{font-weight:800}
     .entry .place{font-size:13px; color:#cfe8ff}
@@ -96,7 +89,7 @@
         <div class="who">
           <h1>Islam Nasr</h1>
           <div class="role">Senior CRM</div>
-          <p class="quick muted">CRM & Customer Service professional بخبرة 9+ سنوات في العقارات والسيارات والبنوك. تطوير CRM، تتبّع المبيعات، وقيادة الفرق.</p>
+          <p class="quick muted">CRM & Customer Service professional with 9+ years of experience in real estate, automotive, and banking. CRM development, sales tracking, and team leadership.</p>
         </div>
       </div>
     </section>
@@ -105,7 +98,7 @@
       <!-- Sidebar -->
       <aside class="stack" aria-label="Sidebar" style="display:grid; gap:18px">
         <div class="card">
-          <h3>التواصل</h3>
+          <h3>Contact</h3>
           <div class="list">
             <div class="item"><span class="icon">📍</span><span>Ain Shams, Cairo, Egypt</span></div>
             <div class="item"><span class="icon">✉️</span><a href="mailto:nassr.islam@outlook.com">nassr.islam@outlook.com</a></div>
@@ -114,7 +107,7 @@
         </div>
 
         <div class="card">
-          <h3>التعليم</h3>
+          <h3>Education</h3>
           <div class="list">
             <div class="item">
               <div class="icon">🎓</div>
@@ -127,15 +120,15 @@
         </div>
 
         <div class="card">
-          <h3>اللغات</h3>
+          <h3>Languages</h3>
           <div class="chips">
-            <span class="chip">العربية: Native</span>
-            <span class="chip">English: B1–B2</span>
+            <span class="chip">Arabic (Native)</span>
+            <span class="chip">English (B1–B2)</span>
           </div>
         </div>
 
         <div class="card">
-          <h3>المهارات</h3>
+          <h3>Skills</h3>
           <div class="chips">
             <span class="chip">CRM Development</span>
             <span class="chip">Customer Journey Mapping</span>
@@ -154,52 +147,52 @@
       <!-- Main content -->
       <section class="stack" style="display:grid; gap:18px">
         <div class="section">
-          <h2>نبذة</h2>
+          <h2>About</h2>
           <p>
-            صمّمت ونفّذت إطار CRM موحّد يغطي رحلة العميل بالكامل، مع توحيد حالات الـ Lead وبناء لوحات تحكم ديناميكية وأتمتة للتقارير ودمج التسويق.
+            Designed and deployed a unified CRM framework that covers the full customer journey, standardizes lead statuses, powers dynamic dashboards, and automates reporting with marketing integration.
           </p>
         </div>
 
         <div class="section">
-          <h2>الخبرات</h2>
+          <h2>Experience</h2>
           <div class="timeline">
             <div class="entry">
-              <div class="when">أغسطس 2025 – حتى الآن</div>
+              <div class="when">Aug 2025 – Present</div>
               <div class="title">Senior CRM</div>
               <div class="place">AOG Developments</div>
               <ul class="bullets">
-                <li>بدء بناء نظام تتبّع Leads وتقارير معيارية.</li>
+                <li>Kickstarted unified lead‑tracking and standardized reporting.</li>
               </ul>
             </div>
             <div class="entry">
-              <div class="when">سبتمبر 2023 – أغسطس 2025</div>
+              <div class="when">Sep 2023 – Aug 2025</div>
               <div class="title">Customer Care Supervisor</div>
               <div class="place">ellaithy Auto Group</div>
               <ul class="bullets">
-                <li>تحسين دقة التقارير ورفع كفاءة التشغيل.</li>
-                <li>رفع رضا العملاء وأتمتة أجزاء من سير العمل.</li>
+                <li>Improved reporting accuracy and operational efficiency.</li>
+                <li>Increased customer satisfaction and automated workflow steps.</li>
               </ul>
             </div>
             <div class="entry">
-              <div class="when">أغسطس 2022 – أكتوبر 2023</div>
+              <div class="when">Aug 2022 – Oct 2023</div>
               <div class="title">Call Center Team Leader</div>
               <div class="place">Banque Misr</div>
               <ul class="bullets">
-                <li>إدارة فريق الردود والالتزام بالـ SLA/KPI.</li>
+                <li>Managed responses team and ensured SLA/KPI compliance.</li>
               </ul>
             </div>
             <div class="entry">
-              <div class="when">يوليو 2019 – سبتمبر 2022</div>
+              <div class="when">Jul 2019 – Sep 2022</div>
               <div class="title">Call Center Team Leader</div>
               <div class="place">National Bank of Egypt</div>
             </div>
             <div class="entry">
-              <div class="when">يونيو 2016 – يونيو 2019</div>
+              <div class="when">Jun 2016 – Jun 2019</div>
               <div class="title">Call Center Agent</div>
               <div class="place">National Bank of Egypt</div>
             </div>
             <div class="entry">
-              <div class="when">ديسمبر 2015 – يونيو 2016</div>
+              <div class="when">Dec 2015 – Jun 2016</div>
               <div class="title">Call Center Agent</div>
               <div class="place">Vodafone 888</div>
             </div>
@@ -208,20 +201,20 @@
 
         <div class="grid-2">
           <div class="section">
-            <h2>الإنجازات الرئيسية</h2>
+            <h2>Key Achievements</h2>
             <ul class="bullets">
-              <li>إطلاق تطوير CRM في AOG مع إطار موحّد للتتبّع والتقارير.</li>
-              <li>تحقيق KPIs في ellaithy عبر تحسين التقارير والكفاءة.</li>
-              <li>رفع جودة خدمة العملاء وتسريع الحلول.</li>
-              <li>قيادة وتدريب الفرق ورفع الأداء العام.</li>
+              <li>Launched CRM development at AOG with a unified tracking & reporting framework.</li>
+              <li>Met KPIs at ellaithy by enhancing reports and efficiency.</li>
+              <li>Improved customer service quality and reduced resolution time.</li>
+              <li>Led and coached teams to elevate performance.</li>
             </ul>
           </div>
           <div class="section">
-            <h2>الدورات والتدريب</h2>
+            <h2>Courses & Training</h2>
             <ul class="bullets">
-              <li>First Time Leadership – Go (يناير 2020)</li>
-              <li>Workforce Management (WFM) – Go Solution (يوليو 2021)</li>
-              <li>تعلم متقدم ذاتي في Excel وتحليل البيانات وأتمتة Google Sheets</li>
+              <li>First Time Leadership – Go (Jan 2020)</li>
+              <li>Workforce Management (WFM) – Go Solution (Jul 2021)</li>
+              <li>Advanced self‑learning in Excel, data analysis, and Google Sheets automation</li>
             </ul>
           </div>
         </div>
@@ -230,7 +223,7 @@
 
     <div class="foot">
       <div class="sep"></div>
-      © <span id="y"></span> Islam Nasr — جميع الحقوق محفوظة
+      © <span id="y"></span> Islam Nasr — All rights reserved
     </div>
   </div>
 
