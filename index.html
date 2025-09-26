@@ -11,11 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#1a1d29;              /* خلفية عامة لون واحد */
+      --bg:#1a1d29;         /* خلفية عامة لون واحد */
       --card:#111318;
       --muted:#8b95a7;
       --text:#eef2f6;
-      --accent:#00aaff;          /* Light Blue */
+      --accent:#00aaff;
       --accent-2:#00aaff;
       --chip:#151923;
       --border:#1f2430;
@@ -24,7 +24,7 @@
     html,body{height:100%}
     body{
       margin:0;
-      background:var(--bg);      /* لون واحد بدون تدرج */
+      background:var(--bg);     /* لون واحد بدون تدرّج */
       color:var(--text);
       font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       line-height:1.6;
@@ -34,7 +34,7 @@
     .shell{display:grid;grid-template-columns:320px 1fr;gap:24px;align-items:start}
     @media (max-width:900px){.shell{grid-template-columns:1fr}}
 
-    /* Header Card */
+    /* Header Card (نخليه زي ما كان مستقر) */
     .hero{
       grid-column:1 / -1;
       background:linear-gradient(135deg,#11131a,#141a26 60%, #0e2230);
@@ -56,41 +56,30 @@
       pointer-events:none;
     }
 
-    /* Headline: الصورة يسار والنص يمين وبنفس الارتفاع */
-    .headline{
-      display:flex;
-      gap:24px;
-      align-items:stretch;
-      flex-wrap:nowrap;
-    }
-    .who{flex:1; min-width:0}
+    .headline{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
+    .who{flex:1;min-width:260px}
 
-    /* Avatar */
+    /* Avatar (ثابت 200px لتفادي مشاكل الطول) */
     .avatar{
-      width:200px;
+      width:200px;height:200px;
       border-radius:24px;
       background:linear-gradient(135deg,#182230,#0d1016);
       border:1px solid var(--border);
-      display:flex;
+      display:grid;place-items:center;
       overflow:hidden;
       box-shadow:0 8px 24px rgba(0,0,0,.35);
       flex-shrink:0;
     }
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      border-radius:24px;
-    }
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:24px}
 
     .who h1{margin:0;font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:.2px}
-    .who .role{margin-top:4px;font-size:clamp(16px,2.2vw,18px);color:var(--accent-2) !important;font-weight:800}
+    .who .role{margin-top:4px;font-size:clamp(16px,2.2vw,18px);color:var(--accent-2);font-weight:800}
 
-    /* Summary */
+    /* Summary الموحد */
     .hero .quick{
       margin-top:14px;
-      color:#ffffff;      /* أبيض */
-      font-size:16px;     /* أكبر قليلاً */
+      color:#fff;          /* أبيض */
+      font-size:16px;      /* أكبر قليلاً */
       line-height:1.8;
     }
 
@@ -103,23 +92,22 @@
     .muted{color:var(--muted)}
 
     /* Links & accent text */
-    a{color:var(--accent) !important;text-decoration:none}
+    a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .entry .place{color:var(--accent) !important}
+    .entry .place{color:var(--accent)}
 
-    /* === Skills: قائمة نقط بدل مربعات === */
+    /* Skills كقائمة نقط */
     .skills-list{
+      margin:0;
+      padding-left:20px; /* مسافة للنقط */
       display:flex;
       flex-direction:column;
       gap:6px;
-      padding-left:20px;      /* مسافة للنقط */
-      margin:0;
     }
     .skills-list li{
-      list-style:disc;        /* نقط */
-      color:#ffffff;
+      list-style:disc;
+      color:#fff;
       font-size:14px;
-      padding-left:2px;
     }
 
     /* Main sections */
@@ -138,15 +126,8 @@
 
     /* Footer + Separator (2mm) */
     .foot{grid-column:1/-1;text-align:center;color:var(--muted);font-size:13px;margin-top:8px}
-    .sep{height:2mm;background:var(--border);margin:8px 0 16px} /* سمك 2 ملم */
+    .sep{height:2mm;background:var(--border);margin:8px 0 16px}
     .counter{margin-top:6px;font-size:14px;color:#ffffff}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .headline{flex-wrap:wrap;align-items:flex-start}
-      .avatar{width:170px}
-      .avatar img{height:auto}
-    }
   </style>
 </head>
 <body>
@@ -199,7 +180,7 @@
           <h3>Languages</h3>
           <div class="chips">
             <span class="chip">Arabic (Native)</span>
-            <span class="chip">English (A1–B2)</span>
+            <span class="chip">English (B1–B2)</span>
           </div>
         </div>
 
@@ -292,7 +273,7 @@
     </div>
 
     <div class="foot">
-      <div class="sep"></div>  <!-- سمك 2 مم -->
+      <div class="sep"></div>
       <p class="counter">Visitors Count: <span id="visitor-count">0</span></p>
       © <span id="y"></span> Islam Nasr — All rights reserved
     </div>
@@ -305,9 +286,8 @@
     // عداد زوار عالمي (CountAPI)
     fetch('https://api.countapi.xyz/hit/islamnasr-cv/visits')
       .then(res => res.json())
-      .then(res => {
-        document.getElementById('visitor-count').textContent = res.value;
-      });
+      .then(res => { document.getElementById('visitor-count').textContent = res.value; })
+      .catch(() => { document.getElementById('visitor-count').textContent = '—'; });
   </script>
 </body>
 </html>
